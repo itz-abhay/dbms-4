@@ -1,0 +1,24 @@
+create database practical4;
+use practical4;
+
+create table Student (
+Roll_No int NOT NULL AUTO_INCREMENT,
+stu_Name varchar(20),
+Email varchar(40) default null ,
+age int,
+Address varchar(100),
+primary key (Roll_No));
+
+create table Instructor(
+Inst_ID int,
+inst_Name varchar(20) unique,
+Dept varchar(10),
+salary int,
+primary key (Inst_ID));
+
+create table Teaches(
+Course_ID int,
+Inst_ID int,
+Sem int,
+foreign key (Inst_ID) references Instructor(Inst_ID));
+desc teaches;
